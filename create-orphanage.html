@@ -53,17 +53,19 @@
 
             <div class="map-container">
               <div id="mapid"></div>
+              <input type="hidden" name="lat" />
+              <input type="hidden" name="lng" />
 
               <footer>
-                <a href="#" id="select-point"
-                  >Clique no mapa para adicionar a localização</a
-                >
+                <a href="#" id="select-point">
+                  Clique no mapa para adicionar a localização
+                </a>
               </footer>
             </div>
 
             <div class="input-block">
               <label for="name">Nome</label>
-              <input id="name" name="name" required/>
+              <input id="name" name="name" required />
             </div>
 
             <div class="input-block">
@@ -75,29 +77,28 @@
 
             <div class="input-block">
               <label for="whatsapp">Número de whatsapp</label>
-              <input id="whatsapp" name="whatsapp" required/>
+              <input id="whatsapp" name="whatsapp" required />
             </div>
 
             <div class="input-block images">
               <label for="images">Foto</label>
 
               <div class="images-upload" id="images">
-
                 <div class="new-upload">
-                  <input name="images" placeholder="Cole o link da foto aqui" required/>
-                  <span>
-                    <img src="./public/images/remove-file.svg" alt="">
+                  <input
+                    name="images"
+                    placeholder="Cole o link da foto aqui"
+                    required
+                  />
+                  <span onclick="deleteField(event)">
+                    <img src="./public/images/remove-file.svg" alt="" />
                   </span>
                 </div>
-
-                
-               
               </div>
 
-              <button type="button">
+              <button onclick="addPhotoField()" type="button">
                 <img src="./public/images/add-file.svg" alt="Nova imagem" />
               </button>
-
             </div>
           </fieldset>
 
@@ -106,12 +107,16 @@
 
             <div class="input-block">
               <label for="instructions">Instruções</label>
-              <textarea id="instructions" name="instructions" required></textarea>
+              <textarea
+                id="instructions"
+                name="instructions"
+                required
+              ></textarea>
             </div>
 
             <div class="input-block">
               <label for="opening_hours">Horário das visitas</label>
-              <input id="opening_hours" name="opening_hours" required/>
+              <input id="opening_hours" name="opening_hours" required />
             </div>
 
             <div class="input-block">
@@ -125,15 +130,17 @@
               />
 
               <div class="button-select">
-                <button type="button" class="active">Sim</button>
-                <button type="button">Não</button>
+                <button data-value="1"
+                  onclick="toggleSelect(event)" 
+                  type="button" 
+                  class="active">Sim</button>
+                <button data-value="0"
+                  onclick="toggleSelect(event)" 
+                  type="button"
+                  >Não</button>
               </div>
 
-              <button type="submit" class="primary-button">
-                Confirmar
-              </button>
-
-
+              <button type="submit" class="primary-button">Confirmar</button>
             </div>
           </fieldset>
         </form>
